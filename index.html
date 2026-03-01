@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermaga Kopi | Anchor your worries for a while</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --charcoal: #121212;
+            --rich-black: #0a0a0a;
+            --gold: #c5a059;
+            --muted-wood: #8b5e3c;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--rich-black);
+            color: #e5e5e5;
+            overflow-x: hidden;
+            cursor: none; /* Custom cursor */
+        }
+
+        /* Custom Cursor */
+        #cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+        #cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.15s ease-out;
+        }
+
+        .text-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+        
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Navigation glassmorphism */
+        nav {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .menu-card {
+            background: #1a1a1a;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Modal styling */
+        .modal-overlay {
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* Industrial elements */
+        .nautical-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .tab-btn.active {
+            color: var(--gold);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            #cursor-dot, #cursor-outline { display: none; }
+            body { cursor: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-tighter text-gold">DERMAGA</div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
+            <a href="#home" class="hover:text-gold transition">Home</a>
+            <a href="#about" class="hover:text-gold transition">About</a>
+            <a href="#menu" class="hover:text-gold transition">Menu</a>
+            <a href="#gallery" class="hover:text-gold transition">Gallery</a>
+            <a href="#contact" class="hover:text-gold transition">Contact</a>
+        </div>
+        <button class="md:hidden text-gold">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="h-screen flex items-center justify-center text-center hero-gradient px-4">
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-gold tracking-[0.3em] uppercase text-sm mb-4">Est. 2025</h2>
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tight">DERMAGA KOPI</h1>
+            <p class="text-xl md:text-2xl font-light italic text-gray-400 mb-10">"Anchor your worries for a while."</p>
+            <a href="#menu" class="px-10 py-4 border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 uppercase tracking-widest text-sm font-bold inline-block">
+                Explore Menu
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 md:px-20 bg-charcoal">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&q=80&w=800" alt="Cafe Interior" class="rounded-sm shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 border-2 border-gold -z-10"></div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <h3 class="text-gold text-sm tracking-widest uppercase mb-4">Our Story</h3>
+                <h2 class="text-4xl font-bold mb-6">The Pier of Tranquility</h2>
+                <div class="nautical-line"></div>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    In the middle of the city's hustle and bustle, we built a dock. **Dermaga Kopi** (Coffee Pier) is designed as a sanctuary where time slows down. Inspired by the raw aesthetic of industrial ports and the calm of the sea at night, our space offers more than just caffeine.
+                </p>
+                <p class="text-gray-400 leading-relaxed mb-8">
+                    Whether you are starting a voyage or looking for a place to dock after a long day, our baristas are ready to serve you the perfect anchor.
+                </p>
+                <div class="flex space-x-8">
+                    <div>
+                        <span class="block text-2xl font-bold text-gold">100%</span>
+                        <span class="text-xs uppercase text-gray-500">Arabica Blend</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-bold text-gold">24/7</span>
+                        <span class="text-xs uppercase text-gray-500">Passion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 px-6 md:px-20">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-2">Our Signature Selection</h2>
+            <p class="text-gray-500 italic">Carefully crafted for your palate</p>
+        </div>
+
+        <!-- Menu Tabs -->
+        <div class="flex flex-wrap justify-center gap-4 md:gap-10 mb-12 border-b border-gray-800 pb-4" data-aos="fade-up">
+            <button onclick="filterMenu('chicken')" class="tab-btn active uppercase tracking-tighter text-sm font-semibold pb-2 px-4 transition-all">Chicken Series</button>
+            <button onclick="filterMenu('beef')" class="tab-btn uppercase tracking-tighter text-sm font-semibold pb-2 px-4 transition-all">Beef Series</button>
+            <button onclick="filterMenu('milk')" class="tab-btn uppercase tracking-tighter text-sm font-semibold pb-2 px-4 transition-all">Milk Base</button>
+            <button onclick="filterMenu('brew')" class="tab-btn uppercase tracking-tighter text-sm font-semibold pb-2 px-4 transition-all">Manual Brew</button>
+        </div>
+
+        <!-- Menu Grid -->
+        <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up">
+            <!-- Items injected via JS -->
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-charcoal overflow-hidden">
+        <div class="px-6 mb-12 text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-bold">Atmosphere</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 px-2">
+            <div data-aos="zoom-in" class="aspect-square bg-gray-900"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" alt="Coffee"></div>
+            <div data-aos="zoom-in" data-aos-delay="100" class="aspect-square bg-gray-900"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=500&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" alt="Interior"></div>
+            <div data-aos="zoom-in" data-aos-delay="200" class="aspect-square bg-gray-900"><img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=500&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" alt="Beans"></div>
+            <div data-aos="zoom-in" data-aos-delay="300" class="aspect-square bg-gray-900"><img src="https://images.unsplash.com/photo-1497933321162-07588b83920a?w=500&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" alt="Latte Art"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 md:px-20">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-8">Reach The Dock</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="map-pin" class="text-gold mt-1"></i>
+                        <div>
+                            <p class="font-bold">Location</p>
+                            <p class="text-gray-400">Jl. Pelabuhan No. 25, Semarang, Central Java</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="clock" class="text-gold mt-1"></i>
+                        <div>
+                            <p class="font-bold">Opening Hours</p>
+                            <p class="text-gray-400">Mon - Sun: 08:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="instagram" class="text-gold mt-1"></i>
+                        <div>
+                            <p class="font-bold">Social Media</p>
+                            <p class="text-gray-400">@dermagakopisemarang</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Placeholder Map -->
+                <div class="mt-10 h-64 bg-zinc-900 border border-zinc-800 flex items-center justify-center grayscale">
+                    <span class="text-zinc-700 uppercase tracking-widest text-xs">Interactive Map Placeholder</span>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200" class="bg-charcoal p-8 border border-zinc-800">
+                <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="w-full bg-zinc-900 border border-zinc-800 p-3 outline-none focus:border-gold transition">
+                    <input type="email" placeholder="Email Address" class="w-full bg-zinc-900 border border-zinc-800 p-3 outline-none focus:border-gold transition">
+                    <textarea placeholder="Your message..." rows="4" class="w-full bg-zinc-900 border border-zinc-800 p-3 outline-none focus:border-gold transition"></textarea>
+                    <button class="w-full py-4 bg-gold text-black font-bold uppercase tracking-widest hover:bg-white transition duration-300">Signal Us</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-zinc-800 text-center text-xs text-gray-600 uppercase tracking-[0.3em]">
+        <p>&copy; 2025 DERMAGA COFFEE. ALL RIGHTS RESERVED.</p>
+        <p class="mt-2 text-zinc-800">Anchor your worries for a while</p>
+    </footer>
+
+    <!-- Modal for Menu Items -->
+    <div id="menu-modal" class="modal-overlay fixed inset-0 z-[100] items-center justify-center p-4">
+        <div class="bg-zinc-900 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-gold">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white z-10">
+                <i data-lucide="x"></i>
+            </button>
+            <div id="modal-content" class="p-0">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: false,
+            mirror: true
+        });
+
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Custom Cursor Logic
+        const dot = document.getElementById('cursor-dot');
+        const outline = document.getElementById('cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            dot.style.left = `${posX}px`;
+            dot.style.top = `${posY}px`;
+
+            outline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Hover effect for cursor
+        document.querySelectorAll('a, button, .menu-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                outline.style.transform = 'scale(1.5)';
+                outline.style.borderColor = '#c5a059';
+            });
+            el.addEventListener('mouseleave', () => {
+                outline.style.transform = 'scale(1)';
+                outline.style.borderColor = '#c5a059';
+            });
+        });
+
+        // Menu Data
+        const menuData = {
+            chicken: [
+                { name: "Chicken Teriyaki", price: "32K", desc: "Ayam saus teriyaki yang manis dan meresap, disajikan dengan telur dan taburan wijen.", img: "https://images.unsplash.com/photo-1626074353765-517a681e40be?w=800&q=80" },
+                { name: "Chicken Blackpepper", price: "32K", desc: "Potongan ayam dengan saus lada hitam, memberikan sensasi pedas hangat dan aroma kuat.", img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&q=80" },
+                { name: "Chicken Barbeque", price: "32K", desc: "Ayam saus BBQ manis-gurih dengan aroma smoky, lengkap dengan nasi, telur, dan sayuran segar.", img: "https://images.unsplash.com/photo-1626074353765-517a681e40be?w=800&q=80" },
+                { name: "Chicken Karage", price: "28K", desc: "Ayam goreng ala Jepang yang renyah & juicy, disajikan dengan nasi, telur, dan saus spicy mayo.", img: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=800&q=80" }
+            ],
+            beef: [
+                { name: "Beef Teriyaki", price: "49K", desc: "Daging sapi yang ditumis dengan saus teriyaki manis-gurih, lengkap dengan nasi hangat & tamagoyaki.", img: "https://images.unsplash.com/photo-1534422298391-e4f8c170db0a?w=800&q=80" },
+                { name: "Beef Blackpepper", price: "46K", desc: "Irisan daging sapi dengan saus lada hitam yang hangat. Disajikan dengan nasi putih & tamagoyaki.", img: "https://images.unsplash.com/photo-1606471191009-63994c53433b?w=800&q=80" },
+                { name: "Beef Barbeque", price: "45K", desc: "Irisan daging sapi dengan saus BBQ spesial yang smokey.", img: "https://images.unsplash.com/photo-1529692236671-f1f6e9460272?w=800&q=80" }
+            ],
+            milk: [
+                { name: "Matcha Cheese Cream", price: "29K", desc: "Matcha dingin yang dipadukan dengan cream keju lembut di bagian atas. Gurih, manis, dan elegan.", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=800&q=80" },
+                { name: "Matcha Latte", price: "26K", desc: "Matcha creamy dengan rasa earthy yang halus. Manisnya pas.", img: "https://images.unsplash.com/photo-1536882247184-03a0ffb3d75c?w=800&q=80" },
+                { name: "Chocolate Milkshake", price: "25K", desc: "Coklat tebal, dingin, dan super creamy. Full dessert vibe.", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80" },
+                { name: "Red Velvet", price: "24K", desc: "Creamy, sedikit coklat, dengan aroma vanilla yang lembut.", img: "https://images.unsplash.com/photo-1594631252845-29fc458695d3?w=800&q=80" }
+            ],
+            brew: [
+                { name: "Japanesse Drip", price: "33K", desc: "Metode seduh manual dengan sensasi rasa kopi yang bersih dan aromatik.", img: "https://images.unsplash.com/photo-1544787210-2212bb4d329d?w=800&q=80" },
+                { name: "Vietnam Drip", price: "24K", desc: "Kopi robusta kental dipadu susu kental manis, khas ala Vietnam.", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80" }
+            ]
+        };
+
+        function filterMenu(category) {
+            const grid = document.getElementById('menu-grid');
+            const btns = document.querySelectorAll('.tab-btn');
+            
+            btns.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase().includes(category)) btn.classList.add('active');
+            });
+
+            grid.innerHTML = '';
+            menuData[category].forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'menu-card p-4 rounded-lg cursor-pointer group';
+                card.onclick = () => openModal(item);
+                card.innerHTML = `
+                    <div class="overflow-hidden mb-4 aspect-square rounded">
+                        <img src="${item.img}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="${item.name}">
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-lg">${item.name}</h4>
+                        <span class="text-gold font-bold">${item.price}</span>
+                    </div>
+                    <p class="text-xs text-gray-500 line-clamp-2">${item.desc}</p>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openModal(item) {
+            const modal = document.getElementById('menu-modal');
+            const content = document.getElementById('modal-content');
+            
+            content.innerHTML = `
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2">
+                        <img src="${item.img}" class="w-full h-full object-cover" style="min-height: 300px;">
+                    </div>
+                    <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                        <h2 class="text-3xl font-bold mb-2 text-gold">${item.name}</h2>
+                        <div class="h-1 w-12 bg-gold mb-6"></div>
+                        <p class="text-gray-300 leading-relaxed mb-8">${item.desc}</p>
+                        <div class="text-2xl font-bold text-white mb-8">${item.price}</div>
+                        <button class="py-3 px-6 border border-gold text-gold hover:bg-gold hover:text-black transition uppercase tracking-widest text-xs font-bold self-start">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('menu-modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on background click
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('menu-modal')) {
+                closeModal();
+            }
+        }
+
+        // Default Load
+        window.onload = () => filterMenu('chicken');
+    </script>
+</body>
+</html>
