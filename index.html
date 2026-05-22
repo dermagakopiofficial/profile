@@ -1,246 +1,1004 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dermaga Kopi | Anchor your worries for a while</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-	
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-C3KFHJ5EJL"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-C3KFHJ5EJL');
-	</script>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link rel="stylesheet" href="style.css">
+  <title>GRAHA TRANSPORT | Rental Mobil Premium</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#07111f;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+      radial-gradient(circle at top right, rgba(45,212,191,.10), transparent 25%),
+      radial-gradient(circle at bottom left, rgba(168,85,247,.10), transparent 25%);
+    }
+
+    .glass{
+      background:rgba(255,255,255,.05);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .hero-bg{
+      background:
+      radial-gradient(circle at top right, rgba(45,212,191,.14), transparent 25%),
+      radial-gradient(circle at bottom left, rgba(249,115,22,.14), transparent 25%),
+      linear-gradient(to bottom,#07111f,#0F172A);
+    }
+
+    .btn-primary{
+      background:linear-gradient(90deg,#11b6aa,#39d9c8);
+      transition:.4s;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 25px rgba(45,212,191,.45);
+    }
+
+    .card-dark{
+      background:#1b2740;
+      border:1px solid rgba(255,255,255,.06);
+      transition:.4s;
+    }
+
+    .card-dark:hover{
+      transform:translateY(-10px);
+      border-color:#2DD4BF;
+      box-shadow:0 0 35px rgba(45,212,191,.30);
+    }
+
+    .hero-slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:32px;
+      height:560px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .hero-track{
+      display:flex;
+      height:100%;
+      transition:1s ease;
+    }
+
+    .hero-track img{
+      width:100%;
+      flex-shrink:0;
+      object-fit:cover;
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,.65), transparent);
+    }
+
+    .dots{
+      position:absolute;
+      bottom:25px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:10px;
+      z-index:10;
+    }
+
+    .dot{
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.4);
+      cursor:pointer;
+      transition:.4s;
+    }
+
+    .dot.active{
+      background:#2DD4BF;
+      box-shadow:0 0 15px #2DD4BF;
+    }
+
+    .mobile-menu{
+      position:fixed;
+      inset:0;
+      background:rgba(7,17,31,.98);
+      backdrop-filter:blur(18px);
+      z-index:999;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      gap:18px;
+      transform:translateY(-100%);
+      transition:.5s ease;
+    }
+
+    .mobile-menu.active{
+      transform:translateY(0);
+    }
+
+    .mobile-link{
+      width:260px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      padding:18px;
+      border-radius:24px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.06);
+      font-size:18px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .mobile-link:hover{
+      background:#2DD4BF;
+      color:#000;
+      transform:scale(1.04);
+    }
+
+    .map-wrapper{
+      position:relative;
+      overflow:hidden;
+      border-radius:32px;
+    }
+
+    .map-wrapper::before{
+      content:'';
+      position:absolute;
+      inset:-2px;
+      background:linear-gradient(45deg,#2DD4BF,#0ea5e9,#a855f7);
+      z-index:-1;
+      filter:blur(25px);
+      opacity:.55;
+    }
+
+    .review-card{
+      background:linear-gradient(145deg,#1E293B,#111827);
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .wa-float{
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      0%{
+        box-shadow:0 0 0 0 rgba(37,211,102,.7);
+      }
+      70%{
+        box-shadow:0 0 0 18px rgba(37,211,102,0);
+      }
+      100%{
+        box-shadow:0 0 0 0 rgba(37,211,102,0);
+      }
+    }
+
+    @media(max-width:1024px){
+
+      .hero-slider{
+        height:430px;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .hero-slider{
+        height:320px;
+      }
+
+      .hero-title{
+        font-size:42px;
+        line-height:1.2;
+      }
+
+    }
+
+    @media(max-width:500px){
+
+      .hero-title{
+        font-size:34px;
+      }
+
+      .hero-slider{
+        height:250px;
+        border-radius:22px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body>
 
-    <div id="cursor-dot"></div>
-    <div id="cursor-outline"></div>
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu">
 
-    <nav class="fixed w-full z-[80] px-6 py-4 flex justify-between items-center" id="main-nav">
-        <div class="z-[90]">
-            <a href="#home" class="text-xl md:text-2xl font-bold tracking-tighter text-gold">
-                DERMAGA <span class="text-white font-light">KOPI</span>
-            </a>
-        </div>
-        
-        <div class="hidden md:flex space-x-8 text-[11px] uppercase tracking-[0.2em] font-semibold">
-            <a href="#home" class="hover:text-gold transition">Beranda</a>
-            <a href="#about" class="hover:text-gold transition">Tentang Kami</a>
-            <a href="#menu" class="hover:text-gold transition">Menu</a>
-            <a href="#gallery" class="hover:text-gold transition">Galeri</a>
-            <a href="#contact" class="hover:text-gold transition">Kontak</a>
-        </div>
+  <a href="#beranda" class="mobile-link">
+    <i class="fa-solid fa-house"></i>
+    Beranda
+  </a>
 
-        <button id="menu-toggle" class="md:hidden text-gold z-[90] p-2 focus:outline-none">
-            <i data-lucide="menu" id="toggle-icon"></i>
-        </button>
-    </nav>
+  <a href="#keunggulan" class="mobile-link">
+    <i class="fa-solid fa-shield-heart"></i>
+    Keunggulan
+  </a>
 
-    <div id="mobile-menu" class="fixed inset-0 z-[70] flex flex-col items-center justify-center space-y-8 text-xl uppercase tracking-widest font-bold md:hidden bg-black">
-        <a href="#home" class="mobile-link text-white hover:text-gold transition-colors duration-300">Beranda</a>
-        <a href="#about" class="mobile-link text-white hover:text-gold transition-colors duration-300">Tentang</a>
-        <a href="#menu" class="mobile-link text-white hover:text-gold transition-colors duration-300">Menu</a>
-        <a href="#gallery" class="mobile-link text-white hover:text-gold transition-colors duration-300">Galeri</a>
-        <a href="#contact" class="mobile-link text-white hover:text-gold transition-colors duration-300">Kontak</a>
-    </div>
+  <a href="#armada" class="mobile-link">
+    <i class="fa-solid fa-car-side"></i>
+    Armada
+  </a>
 
-    <section id="home" class="h-screen flex items-center justify-center text-center hero-gradient px-6 relative overflow-hidden">
-        <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1200">
-            <h2 class="text-gold tracking-[0.4em] uppercase text-[10px] md:text-sm mb-6 opacity-80">Semarang • Est. 2025</h2>
-            <h1 class="hero-title text-5xl md:text-8xl font-bold mb-6 tracking-tight leading-none text-white">DERMAGA KOPI</h1>
-            <p class="text-lg md:text-2xl font-light italic text-gray-400 mb-10 max-w-2xl mx-auto">
-                "Anchor your worries for a while."
-            </p>
-            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-                <a href="#menu" class="w-full md:w-auto px-10 py-4 bg-gold text-black hover:bg-white transition-all duration-300 uppercase tracking-widest text-xs font-bold">
-                    Lihat Menu
-                </a>
-                <a href="#contact" class="w-full md:w-auto px-10 py-4 border border-white/20 text-white hover:border-gold hover:text-gold transition-all duration-300 uppercase tracking-widest text-xs font-bold">
-                    Hubungi Kami
-                </a>
-            </div>
-        </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
-            <i data-lucide="chevron-down" class="text-white"></i>
-        </div>
-    </section>
+  <a href="#review" class="mobile-link">
+    <i class="fa-solid fa-star"></i>
+    Review
+  </a>
 
-    <section id="about" class="py-20 md:py-32 px-6 md:px-20 bg-charcoal">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div class="order-2 md:order-1" data-aos="fade-right">
-                <div class="relative group">
-                    <img src="img/dermaga.jpg" alt="Interior Kafe" class="rounded-sm shadow-2xl w-full">
-                    <div class="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 w-32 h-32 md:w-48 md:h-48 border-2 border-gold -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
-                </div>
-            </div>
-            <div class="order-1 md:order-2" data-aos="fade-left">
-                <h3 class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Filosofi Kami</h3>
-                <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">Dermaga Ketenangan</h2>
-                <div class="nautical-line"></div>
-                <p class="text-gray-400 leading-relaxed mb-6 text-sm md:text-base">
-                    Di tengah hiruk pikuk kota Semarang, kami membangun sebuah dermaga. **Dermaga Kopi** dirancang sebagai tempat bersandar di mana waktu seakan melambat. Terinspirasi dari estetika industrial pelabuhan dan ketenangan laut di malam hari.
-                </p>
-                <div class="grid grid-cols-2 gap-8">
-                    <div class="border-l-2 border-gold pl-4">
-                        <span class="block text-2xl md:text-3xl font-bold text-white">100%</span>
-                        <span class="text-[10px] uppercase tracking-widest text-gray-500">Biji Kopi Pilihan</span>
-                    </div>
-                    <div class="border-l-2 border-gold pl-4">
-                        <span class="block text-2xl md:text-3xl font-bold text-white">2025</span>
-                        <span class="text-[10px] uppercase tracking-widest text-gray-500">Sejak Berdiri</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <a href="#kontak" class="mobile-link">
+    <i class="fa-solid fa-phone"></i>
+    Kontak
+  </a>
 
-    <section id="menu" class="py-20 md:py-32 px-4 md:px-20 bg-rich-black">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-white text-3xl md:text-5xl font-bold mb-4">Dermaga Kopi Menu Present</h2>
-            <p class="text-gray-500 italic text-sm md:text-base px-6">Dikurasi khusus untuk memanjakan lidah Anda</p>
-        </div>
-
-        <div class="menu-navigation text-center mb-12" data-aos="fade-up">
-            <div class="flex overflow-x-auto no-scrollbar md:justify-center gap-6 mb-6 border-b border-white/10 pb-4 px-4">
-                <button onclick="showSubMenu('food')" class="main-tab active uppercase tracking-[0.2em] text-xs font-bold px-6 py-2">Food</button>
-                <button onclick="showSubMenu('coffee')" class="main-tab uppercase tracking-[0.2em] text-xs font-bold px-6 py-2">Coffee</button>
-                <button onclick="showSubMenu('non-coffee')" class="main-tab uppercase tracking-[0.2em] text-xs font-bold px-6 py-2">Non-Coffee</button>
-                <button onclick="showSubMenu('snacks')" class="main-tab uppercase tracking-[0.2em] text-xs font-bold px-6 py-2">Snacks</button>
-            </div>
-            <div id="sub-tabs-container" class="flex overflow-x-auto no-scrollbar md:justify-center gap-4 px-4 min-h-[40px]"></div>
-        </div>
-
-        <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-7xl mx-auto"></div>
-    </section>
-	
-    <section id="gallery" class="py-20 md:py-32 px-4 md:px-20 bg-charcoal overflow-hidden">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h3 class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Visual Story</h3>
-            <h2 class="text-white text-3xl md:text-5xl font-bold mb-4 uppercase">Galeri Dermaga</h2>
-            <div class="nautical-line mx-auto max-w-xs"></div>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 max-w-7xl mx-auto" id="gallery-container">
-            </div>
-    </section>
-
-    <div id="gallery-modal" class="fixed inset-0 z-[110] bg-black/95 hidden items-center justify-center p-4 backdrop-blur-md transition-all duration-500 opacity-0">
-        <button onclick="closeGalleryModal()" class="absolute top-8 right-8 text-white/50 hover:text-gold transition-all z-[120]">
-            <i data-lucide="x" class="w-10 h-10"></i>
-        </button>
-        <div class="relative max-w-5xl w-full h-full flex items-center justify-center">
-            <img id="modal-img" src="" class="max-w-full max-h-[85vh] object-contain shadow-2xl border border-white/10">
-        </div>
-    </div>
-
-    <section id="contact" class="py-20 md:py-32 px-6 md:px-20 bg-rich-black">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-20">
-            <div data-aos="fade-up">
-                <h2 class="text-white text-3xl md:text-5xl font-bold mb-8 uppercase tracking-tighter">Hubungi Kami</h2>
-                <div class="space-y-8 mb-10">
-				<div class="flex items-start space-x-5">
-					<div class="w-10 h-10 bg-gold/10 flex items-center justify-center rounded-sm shrink-0 border border-gold/10">
-						<i data-lucide="phone" class="text-gold w-5 h-5"></i>
-					</div>
-					<div>
-						<p class="font-bold text-white uppercase tracking-wider text-xs mb-1">WhatsApp</p>
-						<p class="text-gray-400 text-sm">+62 812-3456-7890</p>
-					</div>
-				</div>
-
-				<div class="flex items-start space-x-5">
-					<div class="w-10 h-10 bg-gold/10 flex items-center justify-center rounded-sm shrink-0 border border-gold/10">
-						<i data-lucide="instagram" class="text-gold w-5 h-5"></i>
-					</div>
-					<div>
-						<p class="font-bold text-white uppercase tracking-wider text-xs mb-1">Instagram</p>
-						<p class="text-gray-400 text-sm">@DERMAGAKOPISEMARANG</p>
-					</div>
-				</div>
-
-    <div class="flex items-start space-x-5">
-        <div class="w-10 h-10 bg-gold/10 flex items-center justify-center rounded-sm shrink-0 border border-gold/10">
-            <svg class="text-gold w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-            </svg>
-        </div>
-        <div>
-            <p class="font-bold text-white uppercase tracking-wider text-xs mb-1">TikTok</p>
-            <p class="text-gray-400 text-sm">@DERMAGAKOPISEMARANG</p>
-        </div>
-    </div>
 </div>
 
-                <div class="w-full h-64 md:h-80 border border-zinc-800 rounded-sm overflow-hidden grayscale contrast-125 opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.7274815159885!2d110.34920157507969!3d-7.041278892960774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b02f640443f%3A0x1f793b9f6fac2ee1!2sDERMAGA%20KOPI%20SEMARANG!5e0!3m2!1sid!2sid!4v1772373925714!5m2!1sid!2sid" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
+<!-- NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 glass">
 
-            <div data-aos="fade-up" data-aos-delay="200" class="bg-charcoal p-8 md:p-12 border border-zinc-800 relative">
-                <h3 class="text-2xl font-bold mb-8 uppercase tracking-widest text-gold">Kirim Pesan</h3>
-                <form class="space-y-5">
-                    <div>
-                        <input type="text" placeholder="Nama Lengkap" class="w-full bg-zinc-900/50 border border-zinc-800 p-3 outline-none focus:border-gold transition-colors text-sm text-white">
-                    </div>
-                    <div>
-                        <input type="email" placeholder="Email (Opsional)" class="w-full bg-zinc-900/50 border border-zinc-800 p-3 outline-none focus:border-gold transition-colors text-sm text-white">
-                    </div>
-                    <div>
-                        <textarea rows="4" placeholder="Apa yang ingin Anda sampaikan?" class="w-full bg-zinc-900/50 border border-zinc-800 p-3 outline-none focus:border-gold transition-colors text-sm text-white"></textarea>
-                    </div>
-                    <button type="submit" class="w-full py-4 bg-gold text-black font-bold uppercase tracking-widest hover:bg-white transition duration-300 text-xs shadow-lg shadow-gold/10">Kirim Pesan Sekarang</button>
-                </form>
-            </div>
-        </div>
-    </section>
+  <div class="max-w-7xl mx-auto px-5 md:px-6 py-4 flex items-center justify-between">
 
-    <footer class="py-10 border-t border-white/5 bg-rich-black text-center">
-        <p class="text-[10px] text-zinc-600 tracking-[0.4em] uppercase mb-2">
-            Anchor your worries for a while
-        </p>
-        <p class="text-[10px] text-zinc-400 tracking-widest">
-            © 2025 DERMAGA COFFEE - @DERMAGAKOPISEMARANG
-        </p>
-        <p class="text-[9px] text-zinc-700 mt-4 italic">Harga tertera diluar PBJT 10%</p>
-    </footer>
+    <div class="flex items-center gap-3">
 
-    <div id="menu-modal" class="modal-overlay fixed inset-0 z-[100] items-center justify-center p-4">
-        <div class="bg-zinc-900 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-gold/30 rounded-sm">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white z-20 bg-black/50 p-2 rounded-full transition-all">
-                <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
-            <div id="modal-content"></div>
-        </div>
+      <img
+      src="https://dummyimage.com/70x70/2dd4bf/000.png&text=GT"
+      class="w-12 h-12 rounded-xl object-cover">
+
+      <div class="text-2xl md:text-3xl font-extrabold italic">
+        <span>GRAHA</span>
+        <span class="text-teal-400">TRANSPORT</span>
+      </div>
+
     </div>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    <script>
-        // Inisialisasi awal saat halaman dimuat
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            AOS.init({ duration: 800, once: true });
-        });
-    </script>
+    <nav class="hidden lg:flex items-center gap-8 font-medium text-sm">
+
+      <a href="#beranda" class="hover:text-teal-400 transition">
+        Beranda
+      </a>
+
+      <a href="#keunggulan" class="hover:text-teal-400 transition">
+        Keunggulan
+      </a>
+
+      <a href="#armada" class="hover:text-teal-400 transition">
+        Armada
+      </a>
+
+      <a href="#review" class="hover:text-teal-400 transition">
+        Review
+      </a>
+
+      <a href="#kontak" class="hover:text-teal-400 transition">
+        Kontak
+      </a>
+
+    </nav>
+
+    <div class="flex items-center gap-4">
+
+      <a href="https://wa.me/6281234567890"
+      class="hidden lg:flex btn-primary px-5 py-3 rounded-xl font-semibold text-black">
+
+        Hubungi Kami
+
+      </a>
+
+      <button id="menuBtn" class="lg:hidden text-2xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+<section id="beranda"
+class="hero-bg min-h-screen flex items-center">
+
+  <div class="max-w-7xl mx-auto px-5 md:px-6 py-32 grid lg:grid-cols-2 gap-14 items-center">
+
+    <!-- TEXT -->
+    <div data-aos="fade-right">
+
+      <div class="inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-2 text-sm text-teal-300 mb-6">
+
+        <i class="fa-solid fa-star"></i>
+        Rental Mobil Premium Indonesia
+
+      </div>
+
+      <h1 class="hero-title text-5xl md:text-7xl font-extrabold leading-tight">
+
+        Mobilitas Modern
+        <span class="text-teal-400">
+          Dengan Pelayanan Premium
+        </span>
+
+      </h1>
+
+      <p class="text-slate-400 text-lg mt-7 leading-relaxed">
+
+        Graha Transport menghadirkan pengalaman rental mobil profesional,
+        nyaman, aman, dan siap melayani perjalanan bisnis maupun wisata.
+
+      </p>
+
+      <div class="flex flex-wrap gap-4 mt-10">
+
+        <a href="#armada"
+        class="btn-primary px-8 py-4 rounded-xl font-semibold text-black">
+
+          Lihat Armada
+
+        </a>
+
+        <a href="https://wa.me/6281234567890"
+        class="border border-white/10 hover:border-teal-400 transition px-8 py-4 rounded-xl font-semibold">
+
+          Konsultasi Gratis
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- HERO SLIDER -->
+    <div data-aos="fade-left">
+
+      <div class="hero-slider">
+
+        <div id="heroTrack" class="hero-track">
+
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1400&auto=format&fit=crop">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1400&auto=format&fit=crop">
+          <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1400&auto=format&fit=crop">
+          <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1400&auto=format&fit=crop">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1400&auto=format&fit=crop">
+
+        </div>
+
+        <div class="overlay"></div>
+
+        <div class="dots">
+
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- KEUNGGULAN -->
+<section id="keunggulan" class="py-24 bg-[#0F172A]">
+
+  <div class="max-w-7xl mx-auto px-5 md:px-6">
+
+    <div class="text-center mb-16">
+
+      <h2 class="text-4xl font-bold mb-4">
+
+        Kenapa Memilih
+        <span class="text-teal-400">
+          Graha Transport?
+        </span>
+
+      </h2>
+
+      <p class="text-slate-400 max-w-2xl mx-auto">
+
+        Pelayanan eksklusif dengan armada premium dan profesionalisme terbaik.
+
+      </p>
+
+    </div>
+
+    <div class="grid sm:grid-cols-2 xl:grid-cols-5 gap-6">
+
+      <div class="card-dark rounded-3xl p-8">
+        <i class="fa-solid fa-headset text-3xl text-teal-400 mb-5"></i>
+        <h3 class="text-xl font-semibold mb-3">24 Jam</h3>
+        <p class="text-slate-400">Customer support aktif.</p>
+      </div>
+
+      <div class="card-dark rounded-3xl p-8">
+        <i class="fa-solid fa-user-tie text-3xl text-orange-400 mb-5"></i>
+        <h3 class="text-xl font-semibold mb-3">Driver Expert</h3>
+        <p class="text-slate-400">Driver profesional.</p>
+      </div>
+
+      <div class="card-dark rounded-3xl p-8">
+        <i class="fa-solid fa-car-side text-3xl text-purple-400 mb-5"></i>
+        <h3 class="text-xl font-semibold mb-3">Armada Premium</h3>
+        <p class="text-slate-400">Mobil sangat terawat.</p>
+      </div>
+
+      <div class="card-dark rounded-3xl p-8">
+        <i class="fa-solid fa-map-location-dot text-3xl text-cyan-400 mb-5"></i>
+        <h3 class="text-xl font-semibold mb-3">Area Luas</h3>
+        <p class="text-slate-400">Siap antar kota besar.</p>
+      </div>
+
+      <div class="card-dark rounded-3xl p-8">
+        <i class="fa-solid fa-city text-3xl text-pink-400 mb-5"></i>
+        <h3 class="text-xl font-semibold mb-3">Corporate Ready</h3>
+        <p class="text-slate-400">Layanan perusahaan.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ARMADA -->
+<section id="armada" class="py-24">
+
+  <div class="max-w-[1700px] mx-auto px-5 md:px-8">
+
+    <div class="text-center mb-16">
+
+      <h2 class="text-4xl font-bold">
+
+        Armada
+        <span class="text-teal-400">
+          Premium Kami
+        </span>
+
+      </h2>
+
+      <p class="text-slate-400 mt-4">
+
+        Kendaraan modern untuk perjalanan nyaman dan elegan.
+
+      </p>
+
+    </div>
+
+    <!-- GRID -->
+    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-8">
+
+      <!-- CARD -->
+      <div class="group relative overflow-hidden rounded-[34px] bg-[#1b2740] border border-cyan-400/30 hover:border-cyan-300 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(45,212,191,0.35)]">
+
+        <div class="relative overflow-hidden">
+
+          <img
+          src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-700">
+
+          <div class="absolute top-5 left-5 bg-cyan-400 text-black text-sm font-bold px-5 py-2 rounded-full">
+            PREMIUM
+          </div>
+
+        </div>
+
+        <div class="p-7">
+
+          <h3 class="text-[36px] font-extrabold leading-tight mb-4">
+            Alphard 
+          </h3>
+
+          <div class="text-[22px] font-bold text-teal-400 mb-8">
+            IDR 2.300K/hari
+          </div>
+
+          <div class="border-y border-white/10 py-8 mb-8">
+
+            <div class="grid grid-cols-3 gap-4 text-center">
+
+              <div>
+                <i class="fa-solid fa-users text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">6 Kursi</p>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-gas-pump text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">Bensin</p>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-gear text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">Otomatis</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <a href="#"
+          class="w-full h-[72px] rounded-2xl bg-gradient-to-r from-[#11b6aa] to-[#39d9c8] flex items-center justify-center gap-3 text-black font-bold text-[28px]">
+
+            <i class="fa-solid fa-circle-check text-[26px]"></i>
+            Pilih Mobil
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="group relative overflow-hidden rounded-[34px] bg-[#1b2740] border border-white/5 hover:border-orange-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(249,115,22,0.25)]">
+
+        <div class="relative overflow-hidden">
+
+          <img
+          src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-700">
+
+          <div class="absolute top-5 left-5 bg-orange-400 text-black text-sm font-bold px-5 py-2 rounded-full">
+            SUV
+          </div>
+
+        </div>
+
+        <div class="p-7">
+
+          <h3 class="text-[36px] font-extrabold leading-tight mb-4">
+            Fortuner VRZ
+          </h3>
+
+          <div class="text-[22px] font-bold text-teal-400 mb-8">
+            IDR 1.300K/hari
+          </div>
+
+          <div class="border-y border-white/10 py-8 mb-8">
+
+            <div class="grid grid-cols-3 gap-4 text-center">
+
+              <div>
+                <i class="fa-solid fa-users text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">7 Kursi</p>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-gas-pump text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">Diesel</p>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-gear text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">Otomatis</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <a href="#"
+          class="w-full h-[72px] rounded-2xl bg-gradient-to-r from-[#11b6aa] to-[#39d9c8] flex items-center justify-center gap-3 text-black font-bold text-[28px]">
+
+            <i class="fa-solid fa-circle-check text-[26px]"></i>
+            Pilih Mobil
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="group relative overflow-hidden rounded-[34px] bg-[#1b2740] border border-white/5 hover:border-purple-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(168,85,247,0.25)]">
+
+        <div class="relative overflow-hidden">
+
+          <img
+          src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-700">
+
+          <div class="absolute top-5 left-5 bg-purple-400 text-black text-sm font-bold px-5 py-2 rounded-full">
+            FAVORIT
+          </div>
+
+        </div>
+
+        <div class="p-7">
+
+          <h3 class="text-[36px] font-extrabold leading-tight mb-4">
+            Innova Zenix
+          </h3>
+
+          <div class="text-[22px] font-bold text-teal-400 mb-8">
+            IDR 850K/hari
+          </div>
+
+          <div class="border-y border-white/10 py-8 mb-8">
+
+            <div class="grid grid-cols-3 gap-4 text-center">
+
+              <div>
+                <i class="fa-solid fa-users text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">7 Kursi</p>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-gas-pump text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">Hybrid</p>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-gear text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">Otomatis</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <a href="#"
+          class="w-full h-[72px] rounded-2xl bg-gradient-to-r from-[#11b6aa] to-[#39d9c8] flex items-center justify-center gap-3 text-black font-bold text-[28px]">
+
+            <i class="fa-solid fa-circle-check text-[26px]"></i>
+            Pilih Mobil
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="group relative overflow-hidden rounded-[34px] bg-[#1b2740] border border-white/5 hover:border-cyan-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(45,212,191,0.25)]">
+
+        <div class="relative overflow-hidden">
+
+          <img
+          src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-[250px] object-cover group-hover:scale-110 transition duration-700">
+
+          <div class="absolute top-5 left-5 bg-cyan-400 text-black text-sm font-bold px-5 py-2 rounded-full">
+            EXECUTIVE
+          </div>
+
+        </div>
+
+        <div class="p-7">
+
+          <h3 class="text-[36px] font-extrabold leading-tight mb-4">
+            Pajero Sport
+          </h3>
+
+          <div class="text-[22px] font-bold text-teal-400 mb-8">
+            IDR 1.450K/hari
+          </div>
+
+          <div class="border-y border-white/10 py-8 mb-8">
+
+            <div class="grid grid-cols-3 gap-4 text-center">
+
+              <div>
+                <i class="fa-solid fa-users text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">7 Kursi</p>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-gas-pump text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">Diesel</p>
+              </div>
+
+              <div>
+                <i class="fa-solid fa-gear text-teal-400 text-[22px] mb-3"></i>
+                <p class="text-slate-300 text-lg">Otomatis</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <a href="#"
+          class="w-full h-[72px] rounded-2xl bg-gradient-to-r from-[#11b6aa] to-[#39d9c8] flex items-center justify-center gap-3 text-black font-bold text-[28px]">
+
+            <i class="fa-solid fa-circle-check text-[26px]"></i>
+            Pilih Mobil
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- REVIEW & MAP -->
+<section id="review" class="py-24 bg-[#0F172A]">
+
+  <div class="max-w-7xl mx-auto px-5 md:px-6">
+
+    <div class="text-center mb-16">
+
+      <h2 class="text-4xl font-bold">
+
+        Lokasi &
+        <span class="text-teal-400">
+          Review Google
+        </span>
+
+      </h2>
+
+    </div>
+
+    <div class="grid xl:grid-cols-2 gap-10 items-start">
+
+      <!-- MAP -->
+      <div class="map-wrapper">
+
+        <div class="overflow-hidden rounded-3xl border border-white/10">
+
+          <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4031.2647432648455!2d110.39620667508028!3d-7.115132292888454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4e0668b3b6c02d3%3A0x6bce558a24a94e79!2sGRAHA%20TRANSPORT!5e1!3m2!1sen!2sid!4v1779474357412!5m2!1sen!2sid"
+          width="100%"
+          height="400"
+          style="border:0;"
+          loading="lazy">
+          </iframe>
+
+        </div>
+
+      </div>
+
+      <!-- REVIEW -->
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="review-card rounded-3xl p-7">
+          <h4 class="font-bold text-xl mb-3">Andi Prasetyo</h4>
+          <div class="text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-slate-400">
+            Pelayanan sangat ramah dan mobil sangat bersih.
+          </p>
+        </div>
+
+        <div class="review-card rounded-3xl p-7">
+          <h4 class="font-bold text-xl mb-3">Rina Maharani</h4>
+          <div class="text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-slate-400">
+            Driver profesional dan perjalanan nyaman.
+          </p>
+        </div>
+
+        <div class="review-card rounded-3xl p-7">
+          <h4 class="font-bold text-xl mb-3">Bagas Putra</h4>
+          <div class="text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-slate-400">
+            Sangat cocok untuk perjalanan bisnis.
+          </p>
+        </div>
+
+        <div class="review-card rounded-3xl p-7">
+          <h4 class="font-bold text-xl mb-3">Citra Dewi</h4>
+          <div class="text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-slate-400">
+            Recommended untuk keluarga dan wisata.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer id="kontak"
+class="py-20 border-t border-white/5">
+
+  <div class="max-w-7xl mx-auto px-5 md:px-6 grid md:grid-cols-3 gap-12">
+
+    <div>
+
+      <div class="flex items-center gap-4 mb-6">
+
+        <img
+        src="https://dummyimage.com/80x80/2dd4bf/000.png&text=GT"
+        class="w-16 h-16 rounded-2xl">
+
+        <h3 class="text-3xl font-bold">
+
+          GRAHA
+          <span class="text-teal-400">
+            TRANSPORT
+          </span>
+
+        </h3>
+
+      </div>
+
+      <p class="text-slate-400 leading-relaxed">
+
+        Solusi rental mobil premium dengan pelayanan profesional dan armada modern.
+
+      </p>
+
+    </div>
+
+    <div>
+
+      <h4 class="text-xl font-semibold mb-5">
+        Kontak
+      </h4>
+
+      <div class="space-y-4 text-slate-400">
+
+        <div class="flex gap-3">
+          <i class="fa-solid fa-location-dot text-teal-400 mt-1"></i>
+          <span>Semarang, Jawa Tengah</span>
+        </div>
+
+        <div class="flex gap-3">
+          <i class="fa-solid fa-phone text-teal-400 mt-1"></i>
+          <span>0812-3456-7890</span>
+        </div>
+
+        <div class="flex gap-3">
+          <i class="fa-solid fa-envelope text-teal-400 mt-1"></i>
+          <span>info@grahatransport.com</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <h4 class="text-xl font-semibold mb-5">
+        Navigasi
+      </h4>
+
+      <div class="flex flex-col gap-3 text-slate-400">
+
+        <a href="#beranda">Beranda</a>
+        <a href="#keunggulan">Keunggulan</a>
+        <a href="#armada">Armada</a>
+        <a href="#review">Review</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="border-t border-white/5 mt-14 pt-8 text-center text-slate-500 text-sm">
+
+    © 2026 GRAHA TRANSPORT. All Rights Reserved.
+
+  </div>
+
+</footer>
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/6281234567890"
+class="wa-float fixed bottom-6 right-6 w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center text-3xl z-50">
+
+  <i class="fa-brands fa-whatsapp text-white"></i>
+
+</a>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+  AOS.init({
+    duration:1000,
+    once:true
+  });
+
+  // MOBILE MENU
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.addEventListener('click',()=>{
+
+    mobileMenu.classList.toggle('active');
+
+  });
+
+  // HERO SLIDER
+  const heroTrack = document.getElementById('heroTrack');
+  const dots = document.querySelectorAll('.dot');
+
+  let heroIndex = 0;
+
+  function updateHero(){
+
+    heroTrack.style.transform =
+    `translateX(-${heroIndex * 100}%)`;
+
+    dots.forEach(dot=>dot.classList.remove('active'));
+
+    dots[heroIndex].classList.add('active');
+
+  }
+
+  function autoHero(){
+
+    heroIndex++;
+
+    if(heroIndex > 4){
+      heroIndex = 0;
+    }
+
+    updateHero();
+
+  }
+
+  setInterval(autoHero,3500);
+
+  dots.forEach((dot,index)=>{
+
+    dot.addEventListener('click',()=>{
+
+      heroIndex = index;
+      updateHero();
+
+    });
+
+  });
+
+</script>
+
 </body>
 </html>
