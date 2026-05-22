@@ -251,6 +251,14 @@
 <!-- MOBILE MENU -->
 <div id="mobileMenu" class="mobile-menu">
 
+  <!-- CLOSE BUTTON -->
+  <button id="closeMenu"
+    class="absolute top-6 right-6 w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl hover:bg-teal-400 hover:text-black transition">
+
+    <i class="fa-solid fa-xmark"></i>
+
+  </button>
+
   <a href="#beranda" class="mobile-link">
     <i class="fa-solid fa-house"></i>
     Beranda
@@ -949,10 +957,30 @@ class="wa-float fixed bottom-6 right-6 w-16 h-16 rounded-full bg-[#25D366] flex 
   // MOBILE MENU
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
 
+  // OPEN MENU
   menuBtn.addEventListener('click',()=>{
 
-    mobileMenu.classList.toggle('active');
+    mobileMenu.classList.add('active');
+
+  });
+
+  // CLOSE MENU
+  closeMenu.addEventListener('click',()=>{
+
+    mobileMenu.classList.remove('active');
+
+  });
+
+  // AUTO CLOSE SAAT LINK DIKLIK
+  document.querySelectorAll('.mobile-link').forEach(link=>{
+
+    link.addEventListener('click',()=>{
+
+      mobileMenu.classList.remove('active');
+
+    });
 
   });
 
