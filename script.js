@@ -71,111 +71,116 @@ window.addEventListener('mousemove', (e) => {
 // ==========================================
 const subCategories = {
     'food': [
-        { id: 'chicken', label: 'Chicken Series' },
+        { id: 'chicken', label: 'Chicken Base' },
         { id: 'beef', label: 'Beef Series' },
-        { id: 'dermaga', label: 'Dermaga Series' }
+        { id: 'dermaga', label: 'Main Coars' }, // Sesuai penamaan di tabel (Main Courses)
+        { id: 'signature-food', label: 'Signature' },
+        { id: 'snacks', label: 'Snack & Dessert' }
     ],
     'coffee': [
-        { id: 'classic', label: 'Classic' },
-        { id: 'flavour', label: 'Flavour Series' },
+        { id: 'classic', label: 'Classic Coffee' },
+        { id: 'flavour', label: 'Flavour Coffee' },
         { id: 'manual-brew', label: 'Manual Brew' },
-        { id: 'coffee-mocktail', label: 'Coffee Mocktail' },
-        { id: 'signature', label: 'Signature' }
+        { id: 'signature-coffee', label: 'Signature' }
     ],
     'non-coffee': [
-        { id: 'mocktail', label: 'Mocktail' },
         { id: 'milk-base', label: 'Milk Base' },
-        { id: 'chocolate', label: 'Chocolate' },
-        { id: 'tea', label: 'Tea Series' }
-    ],
-    'snack': [
-        { id: 'snacks', label: 'Snack Series' }
+        { id: 'refresh', label: 'Refresh' },
+        { id: 'mocktail', label: 'Mocktail' },
+        { id: 'tea', label: 'Tea Base' }
     ]
 };
 
 const menuData = {
+    // --- MAKANAN (FOOD) ---
     'chicken': [
-        { name: "Chicken Barbeque", price: "30K", desc: "Ayam saus BBQ manis-gurih dengan aroma smoky, lengkap dengan nasi, telur, dan sayuran segar.", img: "img/7.jpg" },
-        { name: "Chicken Blackpepper", price: "30K", desc: "Potongan ayam dengan saus lada hitam, memberikan sensasi pedas hangat dan aroma kuat." , img: "img/7.jpg"},
-        { name: "Chicken Karage", price: "32K", desc: "Ayam goreng ala Jepang yang renyah & juicy, disajikan dengan nasi, telur, dan saus spicy mayo.", img: "img/7.jpg" },
-        { name: "Chicken Teriyaki", price: "28K", desc: "Ayam saus teriyaki yang manis dan meresap, disajikan dengan telur dan taburan wijen.", img: "img/7.jpg" }
+        { name: "Chicken Karage", price: "34K", desc: "Ayam goreng ala Jepang yang renyah & juicy.", img: "img/7.jpg" },
+        { name: "Chicken Blackpepper", price: "32K", desc: "Potongan ayam dengan saus lada hitam.", img: "img/7.jpg" },
+        { name: "Chicken BBQ", price: "32K", desc: "Ayam saus BBQ manis-gurih dengan aroma smoky.", img: "img/7.jpg" },
+        { name: "Chicken Teriyaki", price: "32K", desc: "Ayam saus teriyaki yang manis dan meresap.", img: "img/7.jpg" },
+        { name: "Chicken Popcorn", price: "36K", desc: "Cemilan/lauk gigitan ayam crispy yang gurih.", img: "img/7.jpg" },
+        { name: "Sei Ayam Sambal Matah", price: "32K", desc: "Ayam sei dengan sambal matah segar khas.", img: "img/7.jpg" },
+        { name: "Ayam Cincane", price: "40K", desc: "Olahan ayam bumbu khas Nusantara.", img: "img/7.jpg" }
     ],
     'beef': [
-        { name: "Beef Barbeque", price: "46K", desc: "Daging sapi dalam balutan saus BBQ dengan aroma smoky, disajikan bersama nasi, telur, & irisan tomat segar." , img: "img/7.jpg"},
-        { name: "Beef Teriyaki", price: "49K", desc: "Daging sapi yang ditumis dengan saus teriyaki manis-gurih, lengkap dengan nasi hangat & tamagoyaki.", img: "img/7.jpg" },
-        { name: "Beef Blackpepper", price: "45K", desc: "Irisan daging sapi dengan saus lada hitam yang hangat. Disajikan dengan nasi putih & tamagoyaki." , img: "img/7.jpg"}
+        { name: "Beef Blackpepper", price: "49K", desc: "Irisan daging sapi dengan saus lada hitam yang hangat.", img: "img/7.jpg" },
+        { name: "Beef Teriyaki", price: "47K", desc: "Daging sapi yang ditumis dengan saus teriyaki manis-gurih.", img: "img/7.jpg" },
+        { name: "Beef BBQ", price: "45K", desc: "Daging sapi dalam balutan saus BBQ dengan aroma smoky.", img: "img/7.jpg" }
     ],
     'dermaga': [
-        { name: "Nila Bakar Nusantara", price: "35K", desc: "Nila bakar bumbu rempah spesial, disajikan dengan nasi, sambal korek, & lalapan segar." , img: "img/7.jpg"},
-        { name: "Ayam Bakar Nusantara", price: "35K", desc: "Ayam bakar bumbu gurih-manis, lengkap dengan nasi hangat & sambal pedas." , img: "img/7.jpg"},
-        { name: "Nasi Goreng Dermaga", price: "35K", desc: "Nasi goreng khas Dermaga dengan topping telur mata sapi, irisan ayam, dan kerupuk." , img: "img/7.jpg"},
-        { name: "Mie Goreng Dermaga", price: "32K", desc: "Mie goreng bumbu kaya rasa dengan topping sosis & bakso, ditemani telur mata sapi." , img: "img/7.jpg"},
-        { name: "Mie Kuah Waduk", price: "32K", desc: "Mie kuah kaldu hangat yang gurih, disajikan dengan telur, ayam, dan sayuran hijau segar.", img: "img/7.jpg" }
+        { name: "Mie Goreng Dermaga", price: "32K", desc: "Mie goreng bumbu kaya rasa khas Dermaga.", img: "img/7.jpg" },
+        { name: "Mie Kuah Waduk", price: "32K", desc: "Mie kuah kaldu hangat yang gurih.", img: "img/7.jpg" },
+        { name: "Nila Bakar Nusantara", price: "35K", desc: "Nila bakar bumbu rempah spesial.", img: "img/7.jpg" },
+        { name: "Nila Asam Manis", price: "42K", desc: "Ikan nila segar dengan saus asam manis.", img: "img/7.jpg" }
+    ],
+    'signature-food': [
+        { name: "DKS Breakfast", price: "37K", desc: "Menu sarapan spesial ala DKS.", img: "img/7.jpg" },
+        { name: "Nasi Goreng Dermaga", price: "35K", desc: "Nasi goreng khas Dermaga.", img: "img/7.jpg" },
+        { name: "Vanilla Tape Golden Glazed", price: "30K", desc: "Olahan tape manis dengan glasir vanilla emas.", img: "img/7.jpg" },
+        { name: "Chicken Cordon Blue", price: "42K", desc: "Daging ayam isi keju dan daging asap digoreng crispy.", img: "img/7.jpg" }
     ],
     'snacks': [
-        { name: "Nugget", desc: "Teman istirahatmu" , price: "28K" , img: "img/7.jpg"},
-        { name: "Mix Platter", desc: "Teman istirahatmu", price: "33K" , img: "img/7.jpg"},
-        { name: "Kentang Goreng", desc: "Teman istirahatmu", price: "25K", img: "img/7.jpg"},
-        { name: "Pisang Stick", desc: "Teman istirahatmu", price: "23K" , img: "img/7.jpg"},
-        { name: "Ropang", desc: "Teman istirahatmu", price: "22K", img: "img/7.jpg" },
-        { name: "Tape Goreng", desc: "Teman istirahatmu", price: "22K", img: "img/7.jpg" },
-        { name: "Jamur Crispy", desc: "Teman istirahatmu", price: "28K", img: "img/7.jpg" },
-        { name: "Sosis Keju", desc: "Teman istirahatmu", price: "22K" , img: "img/7.jpg"},
-        { name: "Tempe Kemul", desc: "Teman istirahatmu", price: "25K", img: "img/7.jpg" }
+        { name: "DKS Deluxe Platter", price: "45K", desc: "Aneka gorengan dan cemilan dalam satu porsi.", img: "img/7.jpg" },
+        { name: "Frenc Fries", price: "28K", desc: "Kentang goreng renyah.", img: "img/7.jpg" },
+        { name: "Chicken Finger", price: "32K", desc: "Stik ayam crispy.", img: "img/7.jpg" },
+        { name: "The Golden Tape", price: "25K", desc: "Tape pilihan digoreng keemasan.", img: "img/7.jpg" },
+        { name: "Melty Choco-Cheese", price: "25K", desc: "Cemilan lumer rasa cokelat dan keju.", img: "img/7.jpg" },
+        { name: "Banana Stick", price: "26K", desc: "Stik pisang manis renyah.", img: "img/7.jpg" },
+        { name: "The Origin Tempeh", price: "23K", desc: "Tempe goreng otentik.", img: "img/7.jpg" },
+        { name: "Cruncy Prawn Bites", price: "33K", desc: "Cemilan udang renyah ukuran gigit.", img: "img/7.jpg" },
+        { name: "Deluxe France Churros", price: "28K", desc: "Churros gaya Prancis yang lezat.", img: "img/7.jpg" },
+        { name: "Triplee S", price: "28K", desc: "Menu snack spesial.", img: "img/7.jpg" }
     ],
+
+    // --- MINUMAN (MINUMAN / COFFEE & NON-COFFEE) ---
     'classic': [
-        { name: "Espresso", price: "18K", desc: "Sari kopi hitam pekat dengan rasa yang kuat dan intens. (Hot)" , img: "img/7.jpg"},
-        { name: "Americano", price: "21K", desc: "Espresso yang disajikan dengan air panas/dingin. Clean, ringan, karakter kopi tetap kuat. (Hot/Ice)" , img: "img/7.jpg"},
-        { name: "Caramel Macchiato", price: "23K", desc: "Espresso dengan saus caramel dan sedikit foam. Tajam namun lebih halus di ujung. (Hot)", img: "img/7.jpg" },
-        { name: "Caffe Latte", price: "27K", desc: "Espresso dan susu yang lebih creamy. Lembut dan nyaman diminum. (Hot/Ice)" , img: "img/7.jpg"},
-        { name: "Cappuccino", price: "28K", desc: "Espresso dengan susu dan foam tebal. Creamy, ringan, dan seimbang. (Hot)" , img: "img/7.jpg"},
-        { name: "Affogato", price: "26K", desc: "Es krim vanilla disiram espresso panas. Manis, creamy, dan nendang. (Ice)" , img: "img/7.jpg"}
+        { name: "Americano", price: "25K", desc: "Espresso dengan air (Hot/Cold).", img: "img/7.jpg" },
+        { name: "Magic", price: "27K", desc: "Double ristretto dengan susu (Hot).", img: "img/7.jpg" },
+        { name: "Cafe Latte", price: "28K", desc: "Espresso dan susu lembut (Hot/Cold).", img: "img/7.jpg" }
     ],
     'flavour': [
-        { name: "Butterscotch Latte", price: "29K", desc: "Kopi susu dingin dengan rasa butterscotch yang manis, lembut, dan creamy. (Ice)" , img: "img/7.jpg"},
-        { name: "Vanilla Latte", price: "28K", desc: "Kopi susu yang lembut, manis tipis, dan aroma vanilla. (Ice)", img: "img/7.jpg" },
-        { name: "Hazelnut Latte", price: "28K", desc: "Kopi susu yang nutty, wangi, dan creamy. (Ice)" , img: "img/7.jpg"},
-        { name: "Caramel Latte", price: "28K", desc: "Manis-legit karamel yang nempel di susu, kopi tetap terasa. (Ice)" , img: "img/7.jpg"},
-        { name: "Brown Sugar", price: "26K", desc: "Kopi susu yang manis legit natural. (Ice)" , img: "img/7.jpg"}
+        { name: "Brown Sugar Latte", price: "28K", desc: "Kopi susu dengan brown sugar (Cold).", img: "img/7.jpg" },
+        { name: "Klepon Latte", price: "28K", desc: "Kopi susu dengan cita rasa klepon khas (Cold).", img: "img/7.jpg" },
+        { name: "Tiramisu Latte", price: "32K", desc: "Kopi susu rasa tiramisu yang kaya (Cold).", img: "img/7.jpg" },
+        { name: "Pecan Praline Latte", price: "30K", desc: "Kopi susu dengan aroma pecan praline (Cold).", img: "img/7.jpg" },
+        { name: "Butterscotch Latte", price: "30K", desc: "Kopi susu dengan saus butterscotch manis (Cold).", img: "img/7.jpg" },
+        { name: "Salted Caramel Macchiato Latte", price: "30K", desc: "Perpaduan karamel asin dan espresso (Cold).", img: "img/7.jpg" }
     ],
     'manual-brew': [
-        { name: "Vietnam Drip", price: "24K", desc: "Kopi hitam tebal dengan krimer kental manis." , img: "img/7.jpg"},
-        { name: "Japanese", price: "33K", desc: "V60 yang seduh panas langsung flash-ice. Ringan, segar, aroma tajam.", img: "img/7.jpg" },
-        { name: "Pour V60", price: "33K", desc: "Seduhan V60 dengan karakter clean dan aromatik." , img: "img/7.jpg"},
-        { name: "Cold Brew", price: "23K", desc: "Kopi hitam yang diseduh dengan air dingin. Halus, fruity tipis, mudah diminum.", img: "img/7.jpg" }
+        { name: "Vietnam Drip", price: "24K", desc: "Kopi hitam tebal dengan krimer kental manis.", img: "img/7.jpg" },
+        { name: "Japanese", price: "33K", desc: "V60 seduh panas langsung flash-ice.", img: "img/7.jpg" },
+        { name: "Pour V60", price: "33K", desc: "Seduhan V60 dengan karakter clean.", img: "img/7.jpg" },
+        { name: "Cold Brew", price: "23K", desc: "Kopi seduh dingin yang halus.", img: "img/7.jpg" }
     ],
-    'coffee-mocktail': [
-        { name: "Irish Coffee", price: "28K", desc: "Kopi hangat dengan karakter bold dan creamy, gaya klasik Irish coffee.", img: "img/7.jpg" },
-        { name: "Kopi Sore", price: "27K", desc: "Americano dengan sentuhan manis dan segar. Lebih smooth.", img: "img/7.jpg" },
-        { name: "Sweet Sour Coffee", price: "26K", desc: "Mocktail kopi dengan rasa fruity dan sparkling. Unik dan seimbang.", img: "img/7.jpg" }
-    ],
-    'signature': [
-        { name: "Chocolatte Frape", price: "36K", desc: "Coklat blended pekat yang creamy, kental, dan aroma wangi khas.", img: "img/7.jpg" },
-        { name: "Dermaga Kopi Frape", price: "38K", desc: "Blended coffee dengan tekstur lembut dan creamy, disajikan dingin.", img: "img/7.jpg" }
-    ],
-    'mocktail': [
-        { name: "Lemon Squash", price: "24K", desc: "Lemon dan soda dengan rasa asam segar yang ringan." , img: "img/7.jpg"},
-        { name: "Leci Squash", price: "24K", desc: "Perpaduan lychee dan soda manis-asam seimbang.", img: "img/7.jpg" },
-        { name: "Dee Beer", price: "26K", desc: "Perpaduan salted caramel dan soda dengan cream lembut." , img: "img/7.jpg"},
-        { name: "Virgin Mojito", price: "22K", desc: "Jeruk nipis, mint, dan soda. Segar dan menyenangkan.", img: "img/7.jpg" }
+    'signature-coffee': [
+        { name: "Dermaga Kopi Frape", price: "40K", desc: "Blended coffee spesial khas Dermaga (Cold).", img: "img/7.jpg" },
+        { name: "DK Choco Frape", price: "39K", desc: "Blended cokelat khas DK (Cold).", img: "img/7.jpg" }
     ],
     'milk-base': [
-        { name: "Matcha Cheese Cream", price: "29K", desc: "Matcha dingin dengan cream keju lembut di atasnya.", img: "img/7.jpg" },
-        { name: "Vanilla Milk Shake", price: "23K", desc: "Vanilla wangi, creamy, dan ringan.", img: "img/7.jpg" },
-        { name: "Matcha Latte", price: "26K", desc: "Matcha creamy dengan rasa earthy halus. (Hot/Ice)", img: "img/7.jpg" },
-        { name: "Chocolatte Milk Shake", price: "25K", desc: "Coklat tebal, dingin, dan super creamy." , img: "img/7.jpg"},
-        { name: "Red Velvet", price: "24K", desc: "Creamy, sedikit coklat dengan aroma vanilla lembut. (Hot/Ice)", img: "img/7.jpg" }
+        { name: "Choco Peanut", price: "33K", desc: "Cokelat dengan sentuhan kacang (Cold/Hot).", img: "img/7.jpg" },
+        { name: "Choco Salted Caramel", price: "33K", desc: "Cokelat dengan karamel asin (Cold/Hot).", img: "img/7.jpg" },
+        { name: "Matcha Latte", price: "28K", desc: "Matcha creamy (Cold/Hot).", img: "img/7.jpg" },
+        { name: "Matcha Cheese Cream", price: "30K", desc: "Matcha dengan lapisan cream keju (Cold).", img: "img/7.jpg" },
+        { name: "Red Velvet", price: "26K", desc: "Minuman red velvet lembut (Cold/Hot).", img: "img/7.jpg" }
     ],
-    'chocolate': [
-        { name: "Mocha", price: "32K", desc: "Perpaduan espresso dan cokelat dengan susu creamy. (Hot/Ice)", img: "img/7.jpg" },
-        { name: "Chocolate Vanilla", price: "32K", desc: "Coklat creamy dengan sentuhan vanilla lembut. (Hot/Ice)", img: "img/7.jpg" },
-        { name: "Chocolate Caramel", price: "32K", desc: "Coklat gurih manis dengan caramel depth kaya. (Hot/Ice)", img: "img/7.jpg" },
-        { name: "Chocolate Hazelnut", price: "33K", desc: "Cokelat lembut dengan aroma hazelnut kaya. (Hot/Ice)" , img: "img/7.jpg"}
+    'refresh': [
+        { name: "Sunset Coffee", price: "28K", desc: "Minuman kopi dengan sensasi menyegarkan (Cold).", img: "img/7.jpg" },
+        { name: "Strawberry Yakult", price: "26K", desc: "Perpaduan stroberi dan Yakult (Cold).", img: "img/7.jpg" },
+        { name: "Lychee Yakult", price: "27K", desc: "Perpaduan leci dan Yakult (Cold).", img: "img/7.jpg" },
+        { name: "Grey Season", price: "28K", desc: "Menu mocktail/refreshment spesial (Cold).", img: "img/7.jpg" },
+        { name: "Greeny Day", price: "30K", desc: "Minuman segar bernuansa hijau (Cold).", img: "img/7.jpg" }
+    ],
+    'mocktail': [
+        { name: "Mix Summer", price: "27K", desc: "Mocktail buah segar ala musim panas (Cold).", img: "img/7.jpg" },
+        { name: "The Shirley", price: "28K", desc: "Minuman mocktail klasik menyegarkan (Cold).", img: "img/7.jpg" },
+        { name: "Ruby Mint Fizz", price: "26K", desc: "Soda dengan sentuhan mint dan buah merah (Cold).", img: "img/7.jpg" },
+        { name: "Lychee Squash", price: "27K", desc: "Mocktail buah leci dengan soda (Cold).", img: "img/7.jpg" },
+        { name: "Green Apple Lemonade", price: "26K", desc: "Lemonade apel hijau yang asam manis (Cold).", img: "img/7.jpg" }
     ],
     'tea': [
-        { name: "Lychee Tea", price: "20K", desc: "Teh seduh dengan buah leci segar dan manis tipis natural. (Hot/Ice)", img: "img/7.jpg" },
-        { name: "Strawberry Tea", price: "20K", desc: "Teh fruity manis-asam, aroma segar dan ringan. (Hot/Ice)", img: "img/7.jpg" },
-        { name: "Lemon Tea", price: "18K", desc: "Teh segar dengan perasan lemon, asam manis ringan. (Hot/Ice)" , img: "img/7.jpg"}
+        { name: "Strawberry Tea", price: "20K", desc: "Teh dengan rasa stroberi (Cold/Hot).", img: "img/7.jpg" },
+        { name: "Lychee Tea", price: "20K", desc: "Teh buah leci segar (Cold/Hot).", img: "img/7.jpg" },
+        { name: "Lemon Tea", price: "18K", desc: "Teh lemon segar (Cold/Hot).", img: "img/7.jpg" }
     ]
 };
 
